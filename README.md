@@ -1,4 +1,4 @@
-![mapbox](./media/mapbox.svg)
+![mapbox](https://raw.githubusercontent.com/bllmo/mapbox-test/master/media/mapbox.svg)
 
 # Mapbox
 
