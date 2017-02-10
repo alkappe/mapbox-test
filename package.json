@@ -1,0 +1,10 @@
+{
+  "name": "mapbox-test",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "budo --open --live"
+  },
+  "devDependencies": {
+    "budo": "^9.4.7"
+  }
+}
