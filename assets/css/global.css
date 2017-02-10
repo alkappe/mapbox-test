@@ -12,3 +12,42 @@ body {
 	font-family: 'San Francisco', -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 16px;
 }
+
+#map {
+        position: absolute;
+        top: 0;
+    z-index: 0;
+        bottom: 0;
+        width: 100%;
+      }
+
+        .button {
+            width: 100%;
+            background-color: #ffffff; 
+            border: none;
+            border-radius: 100px;
+            color: #222;
+            padding: 15px ;
+            padding: 20px 0;
+            text-align: center;
+            font-family: lato;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            -webkit-box-shadow: 0px 2px 30px 0px rgba(50, 50, 50, 0.3);
+            -moz-box-shadow:    0px 2px 30px 0px rgba(50, 50, 50, 0.3);
+            box-shadow:         0px 2px 30px 0px rgba(50, 50, 50, 0.3);
+            outline: none;
+            position: absolute;
+            z-index: 100; 
+            
+        }
+
+.posizione {
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+    
+}

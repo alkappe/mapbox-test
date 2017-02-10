@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="icon" href="assets/favicon.ico">
-    <title>Mapbox</title>
-    <script type="text/javascript" src="assets/css/global.css"></script>
-  </head>
-  <body>
-    <script>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
+    
+    <link type="text/css" rel="stylesheet" href="assets/css/global.css">
+</head>
+<body>
+<div id='map'></div>
 
-    </script>
-  </body>
+<div class="posizione">
+    <button class="button">Duomo</button>
+</div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxrYWNhcCIsImEiOiJjaXl6bXo5dTcwMDBkMndwZ3ZucWJ4OWt1In0.XrzY-9J_CtT9P_vBgLm-kg';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/dark-v9', //stylesheet location
+    center: [9.183223, 45.467047 ], // starting position
+    zoom: 15 // starting zoom
+});
+
+    map.on('click', function(e) {
+  var features = map.queryRenderedFeatures(e.point, {
+    layers: ['{layer name}'] // replace this with the name of the layer
+  });
+
+  if (!features.length) {
+    return;
+  }
+
+  var feature = features[0];
+
+  var popup = new mapboxgl.Popup({ offset: [0, -15] })
+    .setLngLat(feature.geometry.coordinates)
+    .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+    .setLngLat(feature.geometry.coordinates)
+    .addTo(map);
+});
+    
+    
+</script>
+
+</body>
 </html>
